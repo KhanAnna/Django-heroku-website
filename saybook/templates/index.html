@@ -1,0 +1,107 @@
+{% load static %}
+<!doctype html>
+<html>
+  {% block heading %}
+<head>
+	<meta charset="utf-8">
+  
+<link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static '/site.webmanifest' %}">
+
+</head>
+  {% endblock heading %}
+
+
+<body>
+	<div id="wrapper">
+		<header>
+  	<a href="/"><img src="{% static 'images/favicon-32x32.png' %}" alt="Logo"></a>
+      
+    <form name="search" action="{% url 'search_results' %}">
+      <input type="text" name="q" placeholder="Search"><button type="submit">GO</button>
+    </form>
+    
+
+      <nav>
+    	<ul class="top-menu">
+    		<li><a href="{% url 'home' %}">HOME</a></li>
+    		<li><a href="{% url 'about_us' %}">ABOUT US</li>
+    		<li><a href="{% url 'home' %}">ARTICLES</a></li>
+    		<li><a href="{% url 'home' %}">NEWS</a></li>
+    		<li><a href="{% url 'quotes' %}">QUOTES</a></li>
+    		<li><a href="/contact/">CONTACT</a></li>
+        <li><a href="{% url 'register' %}">РЕГИСТРАЦИЯ</a>  |  <a href="{% url 'login' %}"> ВОЙТИ </a></li>
+    	</ul>
+    </nav>
+  </header>
+
+    {% block content %}
+		<nav></nav>
+		<div id="heading">
+      <h1 class="head">ABOUT US</h1>
+    </div>
+		<aside>
+      <nav>
+    	<ul class="aside-menu">
+    		<li class="active">LOREM IPSUM</li>
+    		<li><a href="/donec/">DONEC TINCIDUNT LAOREET</a></li>
+    		<li><a href="/vestibulum/">VESTIBULUM ELIT</a></li>
+    		<li><a href="/etiam/">ETIAM PHARETRA</a></li>
+    		<li><a href="/phasellus/">PHASELLUS PLACERAT</a></li>
+    		<li><a href="/cras/">CRAS ET NISI VITAE ODIO</a></li>
+    	</ul>
+    </nav>
+
+      <h2>OUR OFFICES</h2>
+<p><img src="{% static 'images/sample.png' %}" width="230" height="180" alt="Our offices"></p>
+    </aside>
+		<section>
+      <blockquote>
+	<p>
+		“QUISQUE IN ENIM VELIT, AT DIGNISSIM EST. NULLA UL CORPER, DOLOR AC PELLENTESQUE PLACERAT, JUSTO TELLUS GRAVIDA ERAT, VEL PORTTITOR LIBERO ERAT.”
+	</p>
+	<cite>John Doe, Lorem Ipsum</cite>
+	</blockquote>
+
+      
+        .
+
+     <h1> Правила работы на Литературном портале Say Book</h1>
+
+
+     <p>1. Стать пользователем литературного портала «Ты - Поэт» (далее по тексту - Портал) может любой поклонник поэзии, независимо от его возраста, гражданства, места проживания, зарегистрированный на Портале в установленном порядке.</p>
+
+   <p> Пользователь Портала может осуществить только одну регистрацию. Создание клонов не допускается! Повторная регистрация пользователя возможна в исключительных случаях, по разрешению Администрации сайта.</p>
+
+    <p>За размещенную информацию на сайте несут ответственность пользователи, добавившие ее. Права на все материалы, представленные здесь, принадлежат их авторам.</p>
+
+
+    <p>2. К размещению на Портале допускаются рифмованные и белые стихотворения, верлибры, изображения, фонограммы и видео-материалы. Как исключение, допускается публикация прозаических миниатюр. Материалы могут быть как новые, так и ранее опубликованные в печатных или электронных изданиях, при условии неукоснительного соблюдения всех требований авторского права.</p>
+  <p>Не допускается размещение во всех разделах Портала материалов, не относящихся к перечисленным выше в данном пункте Правил видам литературных произведений, а в комментариях (отзывах) - материалов, не связанных с комментируемым произведением. Информация подобного рода должна передавться через систему личных сообщений или форум.</p>
+  <p>КАТЕГОРИЧЕСКИ запрещается:</p>
+      <ul>
+        <li>размещение в публичном доступе открытых ссылок на другие сайты без разрешения Администрации.</li>
+        <li>использование одним пользователем более одного кабинета;
+- реклама товаров или услуг;</li>
+        <li>открытая резкая критика Портала, действий Администрации или Модератора;</li>
+        <li>бурное, выходящее за рамки цивилизованного, обсуждение политических тем;</li>
+      </ul>
+
+
+<p>Lorem ipsum dolor sit amet…</p>
+<p>Donec vel nisl nibh…</p>
+<p>Donec vel nisl nibh…</p>
+      
+    </section>
+    {% endblock content%}
+	</div>
+  
+
+  {% include "footer.html" %}
+</body>
+
+</html>

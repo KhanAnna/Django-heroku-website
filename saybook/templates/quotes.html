@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block content %}
+<section class="normal">
+    <div>
+      <blockquote>
+        <p id="quote">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas,
+          magni.
+        </p>
+        </blockquote>
+        <h3 id="author">Lorem, ipsum.</h3>
+        <button id="btn">Get Quote</button>
+      
+    </div>
+   <!-- Script -->
+    <script>
+      let quote = document.getElementById("quote");
+      let author = document.getElementById("author");
+      let btn = document.getElementById("btn");
+      
+      const url = "https://api.quotable.io/random";
+      
+      let getQuote = () => {
+        fetch(url)
+          .then((data) => data.json())
+          .then((item) => {
+            quote.innerText = item.content;
+            author.innerText = "Author: " + item.author;
+          });
+      };
+      btn.addEventListener("click", getQuote);
+      window.addEventListener("load", getQuote);
+      
+    </script>
+</section>
+
+{% endblock content %}
