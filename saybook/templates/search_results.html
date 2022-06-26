@@ -2,8 +2,8 @@
 {% extends 'index.html' %}
 {% block content %}
 <section class="normal">
-<h1>Результаты поиска</h1>
-<p></p>
+  <blockquote><a class="cent"">Search results</a></blockquote>
+
 {% if object_list %}
   
 <ul class="list-articles">
@@ -28,6 +28,6 @@
 </ul>
 </section>
 {% else %}
-<h4> Ничего не найдено. Попробуйте изменить запрос. </h4>
+<h4> Nothing was found. Try changing the query. </h4>
 {% endif %}
 {% endblock %}

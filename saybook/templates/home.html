@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block content %}
+<section class="normal">
+{% if request.user.is_authenticated %}
+  <h2>Welcome, {{ user.username }}!</h2>
+  <p><a href="{% url 'logout' %}">Log out</a></p>
+
+{% endif %}
+   <link rel=stylesheet href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+<section class="header1">
+    <blockquote><a class="cent"">Take the first step in writing</a></blockquote>
+</section>
+
+
+
+<script>
+    $(".section").click(function () {
+            $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+            }, 1000);
+            return false;
+        });
+
+</script>
+</section>
+{% endblock %}

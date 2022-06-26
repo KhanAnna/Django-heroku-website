@@ -1,11 +1,12 @@
 {% extends 'index.html' %}
 {% block content %}
 <section class="normal">
+  <blockquote><a class="cent" href="{% url 'add_page' %}">ADD NEW ARTICLE</a></blockquote>
 <ul class="list-articles">
 	{% for p in posts %}
 			<li><div class="article-panel">
-	<p class="first">Категория: {{p.cat}}</p>
-	<p class="last">Дата: {{p.time_update|date:"d-m-Y H:i:s"}}</p>
+	<p class="first">CATEGORY: {{p.cat}}</p>
+	<p class="last">DATA: {{p.time_update|date:"d-m-Y H:i:s"}}</p>
 </div>
 
 {% if p.photo %}
@@ -17,7 +18,7 @@
 	<h4>{{p.content|linebreaks|truncatewords:50}}</h4>
 	{% endautoescape %}
 			<div class="clear"></div>
-			<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Читать пост</a></p>
+			<p class="link-read-post"><a href="{{ p.get_absolute_url }}">READ ARTICLE</a></p>
 			</li>
 	{% endfor %}
 </ul>

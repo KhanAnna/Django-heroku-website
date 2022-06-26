@@ -20,17 +20,26 @@ from django.contrib.contenttypes.models import ContentType
 def index(request):
     return render(request, "index.html", {})
 
-def articles(request):
-    return render(request, "articles.html", {})
+def home(request):
+    return render(request, "home.html", {})
 
 def about_us(request):
-    return render(request, "about_us.html", {})
+    return render(request, "index.html", {})
+
+def contact(request):
+    return render(request, "contact.html", {})
 
 def login(request):
-  return render(request, "registration/login.html")
+    return render(request, "registration/login.html")
+
+def logout(request):
+    return render(request, "registration/logged_out.html")
 
 def quotes(request):
-  return render(request, "quotes.html")
+    return render(request, "quotes.html")
+
+def add_page_err(request):
+    return render(request, "add_page_err.html")
 
 class SignUp(CreateView):
     form_class = UserCreationForm
@@ -42,7 +51,7 @@ def password_reset(request):
 
 class RegisterUser(DataMixin, CreateView):
     form_class = RegisterUserForm
-    template_name = 'register.html'
+    template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -53,13 +62,13 @@ class RegisterUser(DataMixin, CreateView):
 class AddPage(LoginRequiredMixin, DataMixin, CreateView):
     form_class = AddPostForm
     template_name = 'addpage.html'
-    success_url = reverse_lazy('home')
-    login_url = reverse_lazy('home')
-    raise_exception = True
+    success_url = reverse_lazy('articles')
+    login_url = reverse_lazy('add_page_err')
+    raise_exception = False
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="Добавление статьи")
+        c_def = self.get_user_context(title="Adding an article")
         return dict(list(context.items()) + list(c_def.items()))
 
 

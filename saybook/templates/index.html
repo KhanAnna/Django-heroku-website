@@ -4,8 +4,9 @@
   {% block heading %}
 <head>
 	<meta charset="utf-8">
-  
+  {% block css %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}?{% now 'U' %}" type="text/css">
+  {% endblock css %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
 <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
 <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
@@ -30,16 +31,17 @@
     	<ul class="top-menu">
     		<li><a href="{% url 'home' %}">HOME</a></li>
     		<li><a href="{% url 'about_us' %}">ABOUT US</li>
-    		<li><a href="{% url 'home' %}">ARTICLES</a></li>
-    		<li><a href="{% url 'home' %}">NEWS</a></li>
+    		<li><a href="{% url 'articles' %}">ARTICLES</a></li>
+    		<li><a href="{% url 'articles' %}">NEWS</a></li>
     		<li><a href="{% url 'quotes' %}">QUOTES</a></li>
-    		<li><a href="/contact/">CONTACT</a></li>
-        <li><a href="{% url 'register' %}">РЕГИСТРАЦИЯ</a>  |  <a href="{% url 'login' %}"> ВОЙТИ </a></li>
+    		<li><a href="{% url 'contact' %}">CONTACT</a></li>
+        <li><a href="{% url 'register' %}">REGISTER</a>  |  <a href="{% url 'login' %}"> LOGIN </a></li>
     	</ul>
     </nav>
   </header>
 
     {% block content %}
+
 		<nav></nav>
 		<div id="heading">
       <h1 class="head">ABOUT US</h1>
@@ -67,28 +69,24 @@
 	<cite>John Doe, Lorem Ipsum</cite>
 	</blockquote>
 
-      
-        .
+     <h1> Rules of work on the Literary portal Day Book</h1>
 
-     <h1> Правила работы на Литературном портале Say Book</h1>
+     <p>1. Any fan of poetry, regardless of his age, citizenship, place of residence, registered on the Portal in accordance with the established procedure, can become a user of the literary portal "You are a Poet" (hereinafter referred to as the Portal).</p>
 
+   <p>The Portal user can make only one registration. The creation of clones is not allowed! Re-registration of the user is possible in exceptional cases, with the permission of the site Administration.</p>
 
-     <p>1. Стать пользователем литературного портала «Ты - Поэт» (далее по тексту - Портал) может любой поклонник поэзии, независимо от его возраста, гражданства, места проживания, зарегистрированный на Портале в установленном порядке.</p>
-
-   <p> Пользователь Портала может осуществить только одну регистрацию. Создание клонов не допускается! Повторная регистрация пользователя возможна в исключительных случаях, по разрешению Администрации сайта.</p>
-
-    <p>За размещенную информацию на сайте несут ответственность пользователи, добавившие ее. Права на все материалы, представленные здесь, принадлежат их авторам.</p>
+    <p>The users who added it are responsible for the information posted on the site. The rights to all materials presented here belong to their authors.</p>
 
 
-    <p>2. К размещению на Портале допускаются рифмованные и белые стихотворения, верлибры, изображения, фонограммы и видео-материалы. Как исключение, допускается публикация прозаических миниатюр. Материалы могут быть как новые, так и ранее опубликованные в печатных или электронных изданиях, при условии неукоснительного соблюдения всех требований авторского права.</p>
-  <p>Не допускается размещение во всех разделах Портала материалов, не относящихся к перечисленным выше в данном пункте Правил видам литературных произведений, а в комментариях (отзывах) - материалов, не связанных с комментируемым произведением. Информация подобного рода должна передавться через систему личных сообщений или форум.</p>
-  <p>КАТЕГОРИЧЕСКИ запрещается:</p>
+    <p>2. Rhymed and white poems, verlibra, images, phonograms and video materials are allowed to be posted on the Portal. As an exception, the publication of prosaic miniatures is allowed. The materials can be both new and previously published in printed or electronic publications, subject to strict compliance with all copyright requirements.</p>
+  <p>It is not allowed to post materials in all sections of the Portal that do not relate to the types of literary works listed above in this paragraph of the Rules, and in comments (reviews) - materials that are not related to the commented work. Information of this kind should be transmitted through a personal message system or a forum.</p>
+  <p>It is strictly forbidden:</p>
       <ul>
-        <li>размещение в публичном доступе открытых ссылок на другие сайты без разрешения Администрации.</li>
-        <li>использование одним пользователем более одного кабинета;
-- реклама товаров или услуг;</li>
-        <li>открытая резкая критика Портала, действий Администрации или Модератора;</li>
-        <li>бурное, выходящее за рамки цивилизованного, обсуждение политических тем;</li>
+        <li>placing open links to other sites in public access without the permission of the Administration.</li>
+        <li>using more than one cabinet by one user;
+- advertising of goods or services;</li>
+        <li>open harsh criticism of the Portal, the actions of the Administration or Moderator;</li>
+        <li>a stormy discussion of political topics that goes beyond the civilized;</li>
       </ul>
 
 

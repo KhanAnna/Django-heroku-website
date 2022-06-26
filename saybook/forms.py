@@ -4,14 +4,6 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
 from .models import *
-from .models import User
-
-
-# class ArticleChangeListForm(forms.ModelForm):
-
-#     # here we only need to define the field we want to be editable
-#     genre = forms.ModelMultipleChoiceField(queryset=User.objects.all(), 
-#         required=False)
   
 class AddPostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -23,7 +15,7 @@ class AddPostForm(forms.ModelForm):
         fields = ['title', 'slug', 'content', 'photo', 'is_published', 'cat']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-input'}),
-            'content': forms.Textarea(attrs={'cols': 60, 'rows': 10}),
+            'content': forms.Textarea(attrs={'cols': 50, 'rows': 10}),
         }
 
     def clean_title(self):

@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="normal">
+
+<div class="container">
+  <h1 class="head"> CONTACT US </h1>
+  <form action="" class="contact-form">
+      <div class="input-block">
+        <h4><label for="">First Name</label>
+        <input type="text" class="form-control"></h4>
+      </div>
+      <div class="input-block">
+        <h4><label for="">Last Name</label>
+        <input type="text" class="form-control"></h4>
+      </div>
+      <div class="input-block">
+        <h4><label for="">Email</label>
+        <input type="text" class="form-control"></h4>
+      </div>
+      <div class="input-block">
+        <h4><label for="">Message Subject</label>
+        <input type="text" class="form-control"></h4>
+      </div>
+      <div class="input-block textarea">
+        <h4><label for="">Drop your message here</label>
+        <textarea rows="3" type="text" class="form-control"></textarea></h4>
+      </div>
+      <button class="square-button">Send</button>
+
+  </form>
+</div>
+
+</section>
+<script>
+  //material contact form animation
+$('.contact-form').find('.form-control').each(function() {
+  var targetItem = $(this).parent();
+  if ($(this).val()) {
+    $(targetItem).find('label').css({
+      'top': '10px',
+      'fontSize': '14px'
+    });
+  }
+})
+$('.contact-form').find('.form-control').focus(function() {
+  $(this).parent('.input-block').addClass('focus');
+  $(this).parent().find('label').animate({
+    'top': '10px',
+    'fontSize': '14px'
+  }, 300);
+})
+$('.contact-form').find('.form-control').blur(function() {
+  if ($(this).val().length == 0) {
+    $(this).parent('.input-block').removeClass('focus');
+    $(this).parent().find('label').animate({
+      'top': '25px',
+      'fontSize': '18px'
+    }, 300);
+  }
+})
+</script>
+{% endblock content %}
