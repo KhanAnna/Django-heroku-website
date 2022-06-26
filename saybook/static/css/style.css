@@ -494,8 +494,6 @@ p.link-read-post a {
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
 
-//import compass
-@import "compass";
 
 //colors
 $primary-color   : #FF512F;
