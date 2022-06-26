@@ -301,7 +301,6 @@ footer p {
 .social-icon {
 	width: 30px;
 	height: 30px;
-	background: url(../images/social.png) no-repeat;
 	display: inline-block;
 	margin-right: 10px;
 }
@@ -309,7 +308,6 @@ footer p {
 .social-icon-small  {
 	width: 32px;
 	height: 32px;
-	background: url(../images/social-small.png) no-repeat;
 	display: inline-block;
 	margin: 5px 6px 0 0;
 }
